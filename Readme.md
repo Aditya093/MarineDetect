@@ -2,6 +2,8 @@
 
 A full-stack AI-powered application to detect marine species in uploaded videos. Built with **FastAPI**, **YOLOv8**, and **Next.js**. Easily upload, analyze, and view marine life detections directly in your browser.
 
+![alt text](image.png)
+
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white" />
@@ -201,8 +203,7 @@ ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -
 
 ## 🧪 Training for Other Species
 
-The default models may not detect all marine species (e.g., jellyfish was custom-trained).  
-You can train your own YOLOv8 model using annotated data.
+If you want to train for a specific species here's the example notebook for training the yolov8 model.(You need the data in annotated format for yolo model to be trained)
 
 👉 [Kaggle Notebook Example](https://www.kaggle.com/code/adityalad1234/notebook5f94400af7)
 
@@ -226,9 +227,15 @@ You can use any annotation tool that exports in YOLO-compatible format.
 
 ---
 
+## Datasets
+
+- [FishEnv Dataset](https://stpubtenakanclyw.blob.core.windows.net/marine-detect/FishInv-dataset.zip?sv=2022-11-02&ss=bf&srt=co&sp=rltf&se=2099-12-31T18:55:46Z&st=2025-02-03T10:55:46Z&spr=https,http&sig=w%2FTQzrECsYsjtkBXNnnuFtn%2BC06PkjgLxDgRw%2FaUUKI%3D
+)
+- [MegaFauna Dataset](https://stpubtenakanclyw.blob.core.windows.net/marine-detect/MegaFauna-dataset.zip?sv=2022-11-02&ss=bf&srt=co&sp=rltf&se=2099-12-31T18:55:46Z&st=2025-02-03T10:55:46Z&spr=https,http&sig=w%2FTQzrECsYsjtkBXNnnuFtn%2BC06PkjgLxDgRw%2FaUUKI%3D)
+
 ## 🙏 Acknowledgements
 
 - [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Next.js](https://nextjs.org/)
-- [GitHub Repo](https://github.com/Orange-OpenSource/marine-detect)
+
