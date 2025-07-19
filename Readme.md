@@ -2,7 +2,7 @@
 
 A full-stack AI-powered application to detect marine species in uploaded videos. Built with **FastAPI**, **YOLOv8**, and **Next.js**. Easily upload, analyze, and view marine life detections directly in your browser.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi&logoColor=white" />
@@ -15,7 +15,7 @@ A full-stack AI-powered application to detect marine species in uploaded videos.
 ## 🐠 Supported Species
 
 <details>
-<summary><strong>📦 FishEnv.pt</strong></summary>
+<summary><strong>📦 Fish.pt</strong></summary>
 
 - fish  
 - serranidae  
@@ -36,7 +36,7 @@ A full-stack AI-powered application to detect marine species in uploaded videos.
 </details>
 
 <details>
-<summary><strong>🐋 MegaFauna.pt</strong></summary>
+<summary><strong>🐋 Marine.pt</strong></summary>
 
 - ray  
 - shark  
