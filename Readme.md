@@ -1,0 +1,234 @@
+# 🌊 Marine Life Detection App
+
+A full-stack AI-powered application to detect marine species in uploaded videos. Built with **FastAPI**, **YOLOv8**, and **Next.js**. Easily upload, analyze, and view marine life detections directly in your browser.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/YOLOv8-Ultralytics-FF4088?style=flat&logo=python&logoColor=white" />
+</p>
+
+---
+## 🐠 Supported Species
+
+<details>
+<summary><strong>📦 FishEnv.pt</strong></summary>
+
+- fish  
+- serranidae  
+- urchin  
+- scaridae  
+- chaetodontidae  
+- giant_clam  
+- lutjanidae  
+- muraenidae  
+- sea_cucumber  
+- haemulidae  
+- lobster  
+- crown_of_thorns  
+- bolbometopon_muricatum  
+- cheilinus_undulatus  
+- cromileptes_altivelis  
+
+</details>
+
+<details>
+<summary><strong>🐋 MegaFauna.pt</strong></summary>
+
+- ray  
+- shark  
+- turtle  
+
+</details>
+
+<details>
+<summary><strong>🌐 best.pt</strong></summary>
+
+- jellyfish  
+
+</details>
+
+---
+
+## 🧭 Project Structure
+
+\`\`\`bash
+Marine-Detect/
+├── backend/         # FastAPI backend (AI inference, video processing)
+│   ├── app/
+│   ├── models/
+│   ├── results/
+│   └── uploads/
+├── frontend/        # Next.js frontend (React)
+│   ├── src/
+│   └── public/
+├── docker-compose.yml
+└── README.md
+\`\`\`
+
+---
+
+## ✨ Features
+
+- 🎥 Upload marine life videos for detection  
+- 🐬 View annotated video results in-browser  
+- 🔄 Stream results using HLS format  
+- 🐳 Run locally or with Docker Compose  
+
+---
+
+
+
+## ⚙️ Backend
+
+- **Framework:** FastAPI (Python)
+- **Libraries:** Ultralytics, OpenCV, ffmpeg
+- **API Endpoints:**
+  - `POST /predict/video` — Upload a video for detection
+  - `GET /results/{filename}` — Stream/download processed video
+  - `GET /results` — List all available processed videos
+
+---
+
+## 🎯 Frontend
+
+- **Framework:** Next.js (React)
+- **Key Features:** Upload form, progress indicator, video player with HLS support
+- **Environment Config:** Uses `NEXT_PUBLIC_BACKEND_URL` to connect to backend
+
+---
+
+## 🚀 Getting Started
+
+### 🐳 Run with Docker (Recommended)
+
+\`\`\`bash
+docker-compose up --build
+\`\`\`
+
+Then visit:
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend (Swagger UI): [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+### 🔧 Local Development
+
+<details>
+<summary><strong>1️⃣ Backend</strong></summary>
+
+\`\`\`bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+\`\`\`
+
+Install ffmpeg:  
+- Ubuntu: \`sudo apt-get install ffmpeg\`  
+- Windows: [Download](https://ffmpeg.org/download.html) and add to PATH
+
+Run FastAPI server:
+
+\`\`\`bash
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+\`\`\`
+
+</details>
+
+<details>
+<summary><strong>2️⃣ Frontend</strong></summary>
+
+\`\`\`bash
+cd frontend
+npm install
+\`\`\`
+
+Set backend URL for development:
+
+\`\`\`env
+# .env.local
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+\`\`\`
+
+Run Next.js dev server:
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+Access the frontend in your browser:  
+[http://localhost:3000](http://localhost:3000)
+
+</details>
+
+---
+
+## 📹 Usage
+
+1. Open the app in your browser  
+2. Upload a marine life video (MP4 recommended)  
+3. Wait while the video is processed  
+4. Watch the annotated result directly in the app  
+
+---
+
+## 📁 Notes
+
+- Results are saved in \`backend/app/results/\`
+- Uploads are stored in \`backend/app/uploads/\`
+- Place model files inside \`backend/models/\`
+- Videos must be converted to HLS format for streaming
+
+### 🔄 Convert MP4 to HLS using ffmpeg
+
+\`\`\`bash
+ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -f hls output.m3u8
+\`\`\`
+
+---
+
+## 🛠️ Troubleshooting
+
+| Issue                | Solution                                         |
+|---------------------|--------------------------------------------------|
+| \`Failed to fetch\`   | Ensure backend is running and URL is correct     |
+| Docker connection   | Use \`backend\` as hostname inside Docker Compose |
+| ffmpeg not found    | Make sure ffmpeg is installed and in your PATH   |
+
+---
+
+## 🧪 Training for Other Species
+
+The default models may not detect all marine species (e.g., jellyfish was custom-trained).  
+You can train your own YOLOv8 model using annotated data.
+
+👉 [Kaggle Notebook Example](https://www.kaggle.com/code/adityalad1234/notebook5f94400af7)
+
+---
+## 🏷️ Annotation Platform
+
+Annotations were created using [Labelbox](https://labelbox.com/).  
+You can use any annotation tool that exports in YOLO-compatible format.
+
+---
+
+## 📜 License
+
+**MIT License**
+
+---
+
+## 👤 Author
+
+- **Aditya Lad**
+
+---
+
+## 🙏 Acknowledgements
+
+- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Next.js](https://nextjs.org/)
+- [GitHub Repo](https://github.com/Orange-OpenSource/marine-detect)
