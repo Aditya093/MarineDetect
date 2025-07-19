@@ -54,20 +54,19 @@ A full-stack AI-powered application to detect marine species in uploaded videos.
 ---
 
 ## 🧭 Project Structure
-
-\`\`\`bash
+```
 Marine-Detect/
-├── backend/         # FastAPI backend (AI inference, video processing)
-│   ├── app/
-│   ├── models/
-│   ├── results/
-│   └── uploads/
-├── frontend/        # Next.js frontend (React)
-│   ├── src/
-│   └── public/
-├── docker-compose.yml
-└── README.md
-\`\`\`
+├── backend/            # ⚙️ FastAPI backend (AI inference, video processing)
+│   ├── app/            #   Main backend app (API, logic)
+│   ├── models/         #   YOLO model files
+│   ├── results/        #   Processed/annotated videos (output)
+│   └── uploads/        #   Uploaded videos (input)
+├── frontend/           # 💻 Next.js frontend (React UI)
+│   ├── src/            #   Source code (pages, components)
+│   └── public/         #   Static assets (images, icons)
+├── docker-compose.yml  # 🐳 Multi-service orchestration
+└── README.md           # 📄 Project documentation
+```
 
 ---
 
