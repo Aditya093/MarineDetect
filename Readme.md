@@ -104,9 +104,9 @@ Marine-Detect/
 
 ### 🐳 Run with Docker (Recommended)
 
-\`\`\`bash
+```
 docker-compose up --build
-\`\`\`
+```
 
 Then visit:
 - Frontend: [http://localhost:3000](http://localhost:3000)
@@ -119,45 +119,45 @@ Then visit:
 <details>
 <summary><strong>1️⃣ Backend</strong></summary>
 
-\`\`\`bash
+```
 cd backend
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-\`\`\`
+```
 
 Install ffmpeg:  
-- Ubuntu: \`sudo apt-get install ffmpeg\`  
+- Ubuntu: `sudo apt-get install ffmpeg`  
 - Windows: [Download](https://ffmpeg.org/download.html) and add to PATH
 
 Run FastAPI server:
 
-\`\`\`bash
+```
 uvicorn app.main:app --host 0.0.0.0 --port 8000
-\`\`\`
+```
 
 </details>
 
 <details>
 <summary><strong>2️⃣ Frontend</strong></summary>
 
-\`\`\`bash
+```
 cd frontend
 npm install
-\`\`\`
+```
 
 Set backend URL for development:
 
-\`\`\`env
+```
 # .env.local
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
-\`\`\`
+```
 
 Run Next.js dev server:
 
-\`\`\`bash
+```
 npm run dev
-\`\`\`
+```
 
 Access the frontend in your browser:  
 [http://localhost:3000](http://localhost:3000)
@@ -177,16 +177,16 @@ Access the frontend in your browser:
 
 ## 📁 Notes
 
-- Results are saved in \`backend/app/results/\`
-- Uploads are stored in \`backend/app/uploads/\`
-- Place model files inside \`backend/models/\`
+- Results are saved in `backend/app/results/`
+- Uploads are stored in `backend/app/uploads/`
+- Place model files inside `backend/models/`
 - Videos must be converted to HLS format for streaming
 
 ### 🔄 Convert MP4 to HLS using ffmpeg
 
-\`\`\`bash
+```
 ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -f hls output.m3u8
-\`\`\`
+```
 
 ---
 
