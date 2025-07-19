@@ -4,3 +4,5 @@ frontend/node_modules/
 # Ignore Python cache
 backend/app/__pycache__/
 backend/utils/__pycache__/
+backend/app/results/** */
+backend/app/uploads/** 

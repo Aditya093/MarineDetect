@@ -1,9 +1,9 @@
-fastapi==0.110.0
-uvicorn==0.29.0
+fastapi==0.116.1
+uvicorn==0.34.2
 opencv-python-headless==4.9.0.80
-numpy==1.26.4
-Pillow==10.2.0
-tqdm==4.66.4
-ultralytics==8.2.15
+numpy==1.24.3
+Pillow==10.3.0
+tqdm==4.66.2
+ultralytics==8.3.163
 hypercorn==0.16.0
-python-multipart==0.0.9
+python-multipart==0.0.20

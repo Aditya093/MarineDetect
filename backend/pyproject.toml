@@ -1,0 +1,18 @@
+[project]
+name = "backend-app"
+version = "0.1.0"
+description = "FastAPI backend using uv"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "numpy",
+    "opencv-python-headless",
+    "pillow",
+    "tqdm",
+    "ultralytics",
+    "python-multipart"
+]
+
+[tool.uv]
+# optional, can specify virtualenv or settings

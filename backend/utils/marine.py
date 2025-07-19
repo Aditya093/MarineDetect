@@ -139,7 +139,7 @@ def predict_on_images(
 
 
 def predict_on_video(
-    model_paths: list[str]|None,
+    model_paths: list[str],
     confs_threshold: list[float],
     input_video_path: str,
     output_video_path: str,
@@ -226,7 +226,8 @@ def predict_on_video(
     cap.release()
     out.release()
     pbar.close()
-    cv2.destroyAllWindows()
+    # Uncomment if you want to display the video in a windows/ GUI enabled machine
+    # cv2.destroyAllWindows()
     print(f"✅ Output video saved to: {output_video_path}")
     
 
