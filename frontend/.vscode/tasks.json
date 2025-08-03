@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build Next.js app",
+			"command": "npm install",
+			"group": "build",
+			"problemMatcher": [
+				"$tsc"
+			]
+		}
+   ,
+		{
+			"label": "Start Next.js app",
+			"type": "shell",
+			"command": "npm run dev",
+			"group": "test",
+			"isBackground": true
+		}
+	]
+}
